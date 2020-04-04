@@ -1,5 +1,5 @@
 const identity, I;
-Identity = I = a => a;
+identity = I = a => a;
 
 const tap, K;
 tap = K = fn => a => a;
