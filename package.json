@@ -1,0 +1,24 @@
+{
+  "name": "@jonnyirwin/functional",
+  "version": "0.0.1",
+  "description": "Functional helpers",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonnyirwin/functional.git"
+  },
+  "keywords": [
+    "functional",
+    "composition",
+    "javascript",
+    "js"
+  ],
+  "author": "Jonny Irwin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonnyirwin/functional/issues"
+  },
+  "homepage": "https://github.com/jonnyirwin/functional#readme"
+}
