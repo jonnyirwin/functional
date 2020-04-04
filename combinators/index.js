@@ -19,7 +19,6 @@ export {
 	alternation,
 	OR,
 	sequence,
-}
 	S,
 	fork
 }
