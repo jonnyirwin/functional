@@ -1,3 +1,3 @@
-#Functional#
+# Functional #
 
 A collection of functional helper functions
