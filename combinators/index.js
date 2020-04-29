@@ -16,6 +16,8 @@ fork = (join, fnX, fnY) => val => join(fnX(val), fnY(val));
 export {
 	identity,
 	I,
+	tap,
+	K,
 	alternation,
 	OR,
 	sequence,
