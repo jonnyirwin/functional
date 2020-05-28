@@ -1,30 +1,41 @@
 function Maybe(value) {
-	return value !== null && value !== undefined ? new Just(value) : new Nothing();
+	return Just(value);
 }
 
-Maybe.fromNullable = function fromNullable(a) {
-	return new Maybe(a);
+Maybe.of = Just;
+
+Maybe.fromNullable = function fromNullable(value) {
+	return  value != null ? Just(value) : Nothing();
 }
 
-Maybe.of = Maybe.fromNullable;
+Maybe.tryCatch = fn => {
+	try {
+		return Just(fn());
+	} catch  (err) {
+		return Nothing();
+	}
+}
 
 function Just(value) {
-	this._value = value;
-	this.isNothing = () => false;
-	this.isJust = () => true;
-	this.map = fn => Maybe.fromNullable(fn(this._value));
-	this.join = () => this._value;
-	this.chain = fn => this.map(fn).join();
-	this.toString = () => `Maybe.Just(${this._value})`;
+	return {
+		isNothing: () => false,
+		isJust: () => true,
+		map: fn => Just(fn(value)),
+		fold: () => value,
+		chain: fn => fn(value),
+		toString: () => `Just(${value})`
+	};
 }
 
 function Nothing() {
-	this.isNothing = () => true;
-	this.isJust = () => false;
-	this.map = () => this;
-	this.join = () => this;
-	this.chain = fn => this.map(fn).join();
-	this.toString = () => 'Maybe.Nothing';
+	return {
+		isNothing: () => true,
+		isJust: () => false,
+		map: () => Nothing(),
+		fold: () => Nothing(),
+		chain: fn => Nothing(),
+		toString: () => 'Nothing'
+	};
 }
 
-export { Maybe };
+export { Maybe, Just, Nothing };

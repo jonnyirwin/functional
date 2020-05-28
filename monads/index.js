@@ -1,1 +1,2 @@
-export { Maybe } from './maybe.js';
+export { Maybe, Just, Nothing } from './maybe.js';
+export { Either, Left, Right } from './either.js';

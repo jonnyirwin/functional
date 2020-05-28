@@ -1,16 +1,16 @@
-const identity, I;
+let identity, I;
 identity = I = a => a;
 
-const tap, K;
+let tap, K;
 tap = K = fn => a => a;
 
-const alternation, OR;
+let alternation, OR;
 alternation = OR = (fnX, fnY) => val => fnX(val) || fnY(val);
 
-const sequence, S;
+let sequence, S;
 sequence = S = (...xs) => val => xs.forEach(x => x(val));
 
-const fork;
+let fork;
 fork = (join, fnX, fnY) => val => join(fnX(val), fnY(val));
 
 export {
