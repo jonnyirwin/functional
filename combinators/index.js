@@ -2,7 +2,10 @@ let identity, I;
 identity = I = a => a;
 
 let tap, K;
-tap = K = fn => a => a;
+tap = K = fn => a => {
+	fn(a);
+	return a;
+};
 
 let alternation, OR;
 alternation = OR = (fnX, fnY) => val => fnX(val) || fnY(val);
