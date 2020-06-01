@@ -2,7 +2,7 @@ function IO(fn) {
 	return {
 		map: m => new IO(() => m(fn())),
 		chain: c => c(fn()),
-		run: fn
+		unsafePerformIO: fn
 	};
 }
 
