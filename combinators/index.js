@@ -17,13 +17,13 @@ let fork;
 fork = (join, fnX, fnY) => val => join(fnX(val), fnY(val));
 
 export {
-	identity,
-	I,
-	tap,
-	K,
 	alternation,
+	fork,
+	I,
+	identity,
+	K,
 	OR,
-	sequence,
 	S,
-	fork
+	sequence,
+	tap,
 }

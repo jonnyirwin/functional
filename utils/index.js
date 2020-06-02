@@ -18,8 +18,18 @@ function curry(fn, arr =[]) {
 	}
 }
 
+const flipParameters = fn => a => b => fn(b)(a);
+
+const timer = label => fn => {
+	console.time(label);
+	fn();
+	console.timeEnd(label);
+}
+
 export {
 	compose,
 	pipe,
 	curry,
+	flipParameters,
+	timer
 }
