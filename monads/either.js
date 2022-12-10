@@ -16,8 +16,8 @@ Either.tryCatch = function tryCatch(fn) {
 
 function Left(value) {
 	return {
-		isLeft: () => false,
-		isRight: () => true,
+		isLeft: () => true,
+		isRight: () => false,
 		map: () => Left(value),
 		fold: (f, g) => f(value),
 		chain: () => Left(value),
