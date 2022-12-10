@@ -9,5 +9,6 @@ const trace = label => value => {
 exports = {
 	map,
 	chain,
-	unsafePerformIO
+	unsafePerformIO,
+	trace
 };
